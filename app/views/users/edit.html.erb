@@ -1,0 +1,16 @@
+<nav>
+  <h1>Arif's  Friend App</h1>
+  <%=link_to "Home", users_list_url%> |
+  <%=link_to "Add New Friend", new_user_url%> |
+  <%=link_to "Logout", home_url%>
+</nav>
+<h1>Update <%=@user.fname%>'s Profile</h1>
+
+<%=form_tag user_info_url(@user.id), :method => "put" do%>
+  <p>First Name:</p><%=text_field_tag :fname, @user.fname%>
+  <p>Last Name:</p><%=text_field_tag :lname, @user.lname%>
+  <p>Email:</p><%=text_field_tag :email, @user.email, :size => 50%>
+  <p>Password:</p><%=text_field_tag :password, @user.password%>
+  <p>Picture Link:</p><%=text_field_tag :pic_url, @user.photo_url, :size => 100 %></br>
+  <%=submit_tag "Update Profile"%>
+<%end%>

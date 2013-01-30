@@ -1,0 +1,15 @@
+<nav>
+  <h1>Arif's  Friend App</h1>
+  <%=link_to "Home", users_list_url%> |
+  <%=link_to "Add New Friend", new_user_url%> |
+  <%=link_to "Logout", home_url%>
+</nav>
+<h1>List of Friends</h1>
+<%@users.each do |user|%>
+    <%=link_to image_tag(user.photo_url, :width => 200), user_info_url(user.id)%>
+  <ul>
+    <li><%="First Name: #{user.fname}"%></li>
+    <li><%="Last Name: #{user.lname}"%></li>
+    <li><%="Email: #{user.email}"%></li>
+  </ul>
+<%end%>

@@ -1,0 +1,12 @@
+<h1>Welcome to Arif's Friend App</h1>
+<h2>Sign Up for Arif's Friend App</h2>
+<%=link_to "Sign In", home_url%>
+
+<%=form_tag create_account_url, :method => "post" do%>
+  <p>First Name:</p><%=text_field_tag :fname%>
+  <p>Last Name:</p><%=text_field_tag :lname%>
+  <p>Email:</p><%=text_field_tag :email%>
+  <p>Password:</p><%=text_field_tag :password%>
+  <p>Picture Link:</p><%=text_field_tag :pic_url%></br>
+  <%=submit_tag "Sign Up"%>
+  <%end%>

@@ -1,0 +1,14 @@
+<nav>
+  <h1>Arif's  Friend App</h1>
+  <%=link_to "Home", users_list_url%> |
+  <%=link_to "Add New Friend", new_user_url%> |
+  <%=link_to "Logout", home_url%>
+</nav>
+<h1><%=@user.fname%> is Arif's Friend</h1>
+<%=image_tag @user.photo_url, :width => 200 %></br>
+  <%=link_to "Edit Details", edit_user_url(@user.id)%> | <%=link_to "Delete Friend", delete_user_url, :method => "delete", :confirm => "Are you sure?"%>
+  <ul>
+    <li><%="First Name: #{@user.fname}"%></li>
+    <li><%="Last Name: #{@user.lname}"%></li>
+    <li><%="Email: #{@user.email}"%></li>
+  </ul>
